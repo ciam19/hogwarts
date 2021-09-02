@@ -1,6 +1,6 @@
 # [Hogwarts](https://github.com/ciam19/hogwarts)
 
-![Product Gif](https://github.com/umutesen/angular-material-template/blob/media/material-template-demo.gif)
+![Product Gif](https://raw.githubusercontent.com/ciam19/hogwarts/main/src/app/shared/images/demo.gif)
 
 
 **[Angular Material Application Template](https://onthecode.co.uk/angular-material-starter-template-for-your-next-project/)** is a free template built with Angular 8 and Angular Material 8. You can use it out of the box without having to change any file paths. Everything you need to start development on an Angular 8 project is here.
