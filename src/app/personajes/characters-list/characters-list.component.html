@@ -1,0 +1,49 @@
+<h2>List of characters</h2>
+
+<mat-card>
+    <mat-form-field appearance="fill">
+        <mat-label>Select an house</mat-label>
+        <mat-select #id__house (selectionChange)="GetCharacterByHouse(id__house.value)">
+            <mat-option [value]="data.id" disableRipple *ngFor="let data of houses">{{data.name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+</mat-card>
+
+
+
+
+<div class="example-container mat-elevation-z8">
+
+    <mat-table [dataSource]="dataSource" matSort>
+
+        <!-- ID Column -->
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> name </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.name }} </mat-cell>
+        </ng-container>
+
+        <!-- Progress Column -->
+        <ng-container matColumnDef="patronus">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> patronus </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.patronus}} </mat-cell>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="age">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> age </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.age}} </mat-cell>
+        </ng-container>
+
+        <!-- Color Column -->
+        <ng-container matColumnDef="image">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> image </mat-header-cell>
+            <mat-cell *matCellDef="let row"><img class="img-container" [src]="row.image" alt=""> </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;">
+        </mat-row>
+    </mat-table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>

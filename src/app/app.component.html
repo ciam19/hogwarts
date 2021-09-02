@@ -1,0 +1,90 @@
+<div class="navbar-container" [class.example-is-mobile]="mobileQuery.matches">
+
+    <!-- Top navbar -->
+    <mat-toolbar class="navbar" color="primary">
+
+        <button mat-icon-button (click)="snav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <mat-menu #notificationMenu="matMenu" xPosition="before" yPosition="above" [overlapTrigger]="false">
+
+            <a mat-menu-item>
+                <span>You have new tasks</span>
+            </a>
+            <a mat-menu-item>
+                <span>You have a new message</span>
+            </a>
+
+        </mat-menu>
+
+
+
+        <mat-menu #userMenu="matMenu" xPosition="before" yPosition="above" [overlapTrigger]="false">
+
+            <a mat-menu-item [routerLink]="['/account/profile']">
+                <mat-icon>person</mat-icon>
+                <span>Account</span>
+            </a>
+
+            <a mat-menu-item [routerLink]="['/auth/login']">
+                <mat-icon>exit_to_app</mat-icon>
+                <span>Log out</span>
+            </a>
+
+        </mat-menu>
+
+    </mat-toolbar>
+
+    <mat-sidenav-container class="navbar-sidenav-container">
+        <!-- Side nav -->
+        <mat-sidenav #snav [opened]="!mobileQuery.matches" [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56" class="sidenav">
+
+            <mat-nav-list>
+                <h3 mat-subheader>Main</h3>
+
+                <a mat-list-item [routerLink]="['characters/list']" routerLinkActive="active">
+                    <mat-icon mat-list-icon>
+                        group
+                    </mat-icon>
+                    <p mat-line> Characters </p>
+                </a>
+
+                <a mat-list-item [routerLink]="['students/list']" routerLinkActive="active">
+                    <mat-icon mat-list-icon>
+                        edit
+                    </mat-icon>
+                    <p mat-line> Students </p>
+                </a>
+                <a mat-list-item [routerLink]="['teachers/list']" routerLinkActive="active">
+                    <mat-icon mat-list-icon>
+                        developer_board
+                    </mat-icon>
+                    <p mat-line> Teachers </p>
+                </a>
+
+
+            </mat-nav-list>
+
+        </mat-sidenav>
+
+        <!-- Main content -->
+        <mat-sidenav-content class="sidenav-content">
+
+            <!-- <div class="progress-bar-container">
+                <mat-progress-bar color="accent" mode="indeterminate">
+                </mat-progress-bar>
+                <mat-spinner class="spinner" [diameter]="50" *ngIf="showSpinner"></mat-spinner>
+            </div> -->
+
+            <div style="margin: 0 auto;width: 80%;height: 90vh;">
+                <mat-card style="margin-top: 20px;">
+                    <router-outlet></router-outlet>
+                </mat-card>
+            </div>
+
+
+
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+
+</div>
