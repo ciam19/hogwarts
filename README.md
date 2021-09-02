@@ -1,6 +1,6 @@
 # [Hogwarts](https://github.com/ciam19/hogwarts)
 
-![Product Gif](https://raw.githubusercontent.com/ciam19/hogwarts/main/src/app/shared/images/demo.gif)
+![Product Gif](https://github.com/ciam19/hogwarts/blob/main/src/app/shared/demo-1.gif)
 
 
 ## Quick start
