@@ -3,6 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
+    path: '',
+    loadChildren: () => import('./personajes/characters.module').then(m => m.charactersModule),
+    //canActivate: [AuthGuard, ComputerGuard]
+  },
+  {
     path: 'characters',
     loadChildren: () => import('./personajes/characters.module').then(m => m.charactersModule),
     //canActivate: [AuthGuard, ComputerGuard]
