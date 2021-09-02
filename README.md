@@ -1,4 +1,4 @@
-# [Angular Material Starter Template](https://onthecode.co.uk/angular-material-starter-template-for-your-next-project/)
+# [Hogwarts](https://github.com/ciam19/hogwarts)
 
 ![Product Gif](https://github.com/umutesen/angular-material-template/blob/media/material-template-demo.gif)
 

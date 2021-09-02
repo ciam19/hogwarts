@@ -4,23 +4,20 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./personajes/characters.module').then(m => m.charactersModule),
-    //canActivate: [AuthGuard, ComputerGuard]
-  },
+    redirectTo: '/characters/list',
+    pathMatch:'full'
+},
   {
     path: 'characters',
     loadChildren: () => import('./personajes/characters.module').then(m => m.charactersModule),
-    //canActivate: [AuthGuard, ComputerGuard]
   },
   {
     path: 'students',
     loadChildren: () => import('./estudientes/estudientes.module').then(m => m.studentsModule),
-    //canActivate: [AuthGuard, ComputerGuard]
   },
   {
     path: 'teachers',
     loadChildren: () => import('./profesores/profesores.module').then(m => m.ProfesoresModule),
-    //canActivate: [AuthGuard, ComputerGuard]
   },
 ];
 
